@@ -27,11 +27,5 @@ module Axlsx
       end      
     end
 
-    private
-
-    # assigns the data for this series
-    def xData=(v) DataTypeValidator.validate "Series.data", [SimpleTypedList], v; @xData = v; end
-    def yData=(v) DataTypeValidator.validate "Series.data", [SimpleTypedList], v; @yData = v; end
-
   end
 end
