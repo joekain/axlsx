@@ -2,19 +2,19 @@
 module Axlsx
   class ScatterSeries < Series
     # The x data for this series. 
-    # @return [ValAxisData]
+    # @return [NamedAxisData]
     attr_reader :xData
 
     # The y data for this series. 
-    # @return [ValAxisData]
+    # @return [NamedAxisData]
     attr_reader :yData
 
     def initialize(chart, options={})
       @xData, @yData = nil
       super(chart, options)
 
-      @xData = XValAxisData.new(options[:xData]) unless options[:xData].nil?
-      @yData = YValAxisData.new(options[:yData]) unless options[:yData].nil?
+      @xData = NamedAxisData.new("xVal", options[:xData]) unless options[:xData].nil?
+      @yData = NamedAxisData.new("yVal", options[:yData]) unless options[:yData].nil?
     end
 
     # Serializes the series
@@ -30,8 +30,8 @@ module Axlsx
     private
 
     # assigns the data for this series
-    def xData=(v) DataTypeValidator.validate "Series.data", [SimpleTypedList], v; @data = v; end
-    def yData=(v) DataTypeValidator.validate "Series.data", [SimpleTypedList], v; @data = v; end
+    def xData=(v) DataTypeValidator.validate "Series.data", [SimpleTypedList], v; @xData = v; end
+    def yData=(v) DataTypeValidator.validate "Series.data", [SimpleTypedList], v; @yData = v; end
 
   end
 end

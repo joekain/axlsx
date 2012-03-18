@@ -16,8 +16,7 @@ module Axlsx
 
   require 'axlsx/drawing/cat_axis_data.rb'
   require 'axlsx/drawing/val_axis_data.rb'
-  require 'axlsx/drawing/xval_axis_data.rb'
-  require 'axlsx/drawing/yval_axis_data.rb'
+  require 'axlsx/drawing/named_axis_data.rb'
 
   require 'axlsx/drawing/marker.rb'
  
